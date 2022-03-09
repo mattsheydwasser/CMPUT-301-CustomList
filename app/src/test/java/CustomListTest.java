@@ -26,10 +26,11 @@ public class CustomListTest {
     }
 
     @Test
-    void testHasCity() {
-        City city = new City("Calgary", "Alberta");
+    public void testHasCity() {
 
-        // passes if city can be put into the list
+        City city = new City("Edmonton", "Alberta");
+
+        // passes if city can be put into the list (does not contain city)
         assertTrue(list.hasCity(city));
     }
 
