@@ -1,5 +1,8 @@
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertThat;
 import static org.junit.Assert.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
+
 
 import com.example.simpleparadox.listycity.City;
 import com.example.simpleparadox.listycity.CustomList;
@@ -34,4 +37,19 @@ public class CustomListTest {
         assertTrue(list.hasCity(city));
     }
 
+    @Test
+    public void testDelete() {
+
+        City city = new City("Edmonton", "AB");
+        final City notInList = new City("Vancouver", "BC");
+        list.addCity(city);
+
+        // passes if city is not in list
+        assertThrows(IllegalArgumentException.class, () -> {
+            list.delete(notInList);
+        });
+
+        list.delete(city);
+        assertEquals(1, list.getCount());
+    }
 }
