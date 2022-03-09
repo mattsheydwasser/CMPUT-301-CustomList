@@ -41,7 +41,7 @@ public class CustomListTest {
     public void testDelete() {
 
         City city = new City("Edmonton", "AB");
-        final City notInList = new City("Vancouver", "BC");
+        City notInList = new City("Vancouver", "BC");
         list.addCity(city);
 
         // passes if city is not in list
@@ -50,6 +50,6 @@ public class CustomListTest {
         });
 
         list.delete(city);
-        assertEquals(1, list.getCount());
+        assertEquals(0, list.getCount());
     }
 }
