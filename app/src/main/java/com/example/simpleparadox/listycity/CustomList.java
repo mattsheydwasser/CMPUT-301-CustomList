@@ -59,4 +59,11 @@ public class CustomList extends ArrayAdapter<City> {
         return;
     }
 
+    /* similiar to function from Lab 6 CityList
+     * Returns true if belongs (city not in list), else false
+     */
+    public boolean hasCity(City city) {
+        return false;
+    }
+
 }
